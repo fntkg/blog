@@ -4,6 +4,7 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import notFound from './not-found'
 import { Inter } from 'next/font/google'
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 const InterFont = Inter({
   variable: '--font-inter',
@@ -53,7 +54,7 @@ export default async function RootLayout({
       <body className="flex h-full">
         <div className="flex w-full flex-col">
           <Header mainNav={mainNav} />
-          <main className="flex-auto">{children}</main>
+          <main className="flex-auto">{children} <SpeedInsights /></main>
           <Footer footerNav={footerNav} />
         </div>
       </body>
